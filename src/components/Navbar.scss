@@ -1,0 +1,252 @@
+@import '../App.scss';
+
+// Colores
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$fourth-color: var(--fourth-color);
+
+// Nav
+.nav-container {
+  background: $fourth-color;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+//Drop Down Menu
+.drop-down-menu{
+  display: none;
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  height: calc(4px * 3 + 11px * 2);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: calc(4px / 2);
+  background: $secondary-color;
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+/***** Spin Animation *****/
+
+.bar--top {
+  bottom: calc(50% + 11px + 4px/ 2);
+  transition-property: bottom,transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+
+.bar--middle {
+  top: calc(50% - 4px/ 2);
+  transition-property: opacity;
+  transition-delay: calc(0s + 0.35s);
+}
+
+.bar--bottom {
+  top: calc(50% + 11px + 4px/ 2);
+  transition-property: top,transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+
+#checkbox:checked + .toggle .bar--top {
+  bottom: calc(50% - 4px/ 2);
+  transform: rotate(135deg);
+  transition-delay: 0s,calc(0s + 0.35s);
+}
+
+#checkbox:checked + .toggle .bar--middle {
+  opacity: 0;
+  transition-duration: 0s;
+  transition-delay: calc(0s + 0.35s);
+}
+
+#checkbox:checked + .toggle .bar--bottom {
+  top: calc(50% - 4px/ 2);
+  transform: rotate(225deg);
+  transition-delay: 0s,calc(0s + 0.35s);
+}
+
+// Anchor
+.anchor-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+
+  // Animación de enlaces
+  .animated-link,
+  a {
+    position: relative;
+    padding: 10px 20px;
+    color: $primary-color;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+
+    &:hover {
+      background: $secondary-color;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px $secondary-color,
+                  0 0 25px $secondary-color,
+                  0 0 50px $secondary-color,
+                  0 0 100px $secondary-color;
+    }
+
+    .animation {
+      position: absolute;
+      display: block;
+      bottom: 2px;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, $secondary-color);
+      animation: btn-anim1 2s linear infinite;
+    }
+  }
+}
+
+
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+// SVG
+.svg-container svg {
+  fill: $primary-color;
+  cursor: pointer;
+  transition: fill 0.5s ease-in-out;
+
+  &:hover {
+    transform: scaleX(1);
+    fill: $secondary-color;
+  }
+}
+
+// Card
+.card-hidden {
+  display: none;
+}
+
+.card-tracker-container {
+  position: absolute;
+  top: 11vh;
+  right: 1.2vw;
+  background: $fourth-color;
+  width: 190px;
+  height: 254px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card h1 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card-tracker-container::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, $secondary-color, $secondary-color);
+  height: 130%;
+  animation: rotBGimg 6s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-tracker-container::after {
+  content: '';
+  position: absolute;
+  background: $fourth-color;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+
+//Media Queries
+@media (max-width: 450px) {
+  /* Oculta los elementos del navbar */
+  .anchor-container,
+  .title-container{
+    display: none;
+  }
+  .anchor-mobile-container{
+    display: block;
+    position: absolute;
+    top: 11vh;
+    left: 1.2vw;
+    background: $fourth-color;
+    width: 190px;
+    height: 254px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .my-anchor-hidden{
+    display: none;
+  }
+
+  .drop-down-menu{
+    display: block;
+  }
+}
+
+
+@media (min-width: 451px) and (max-width: 780px) {
+  .anchor-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  
+    // Animación de enlaces
+    .animated-link,
+    a {
+      position: relative;
+      padding: 10px 15px;
+      color: $primary-color;
+      font-size: 12px;
+    }
+  }
+}
