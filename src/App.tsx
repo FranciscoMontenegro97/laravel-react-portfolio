@@ -1,12 +1,16 @@
-import Navbar from './components/Navbar';
-import './App.scss';
+import Navbar from "./components/Navbar";
+import WelcomeSection from "./components/Welcome";
+import "./App.scss";
 
 function App() {
 
   return (
     <>
-      <div className="card">
+      <div className="header-section">
         <Navbar/>
+      </div>
+      <div className="main-section">
+        <WelcomeSection/>
       </div>
     </>
   )

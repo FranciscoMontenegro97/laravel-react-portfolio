@@ -1,17 +1,16 @@
 @font-face {
-  font-family: 'Ubuntu';
-  src: url(./assets/Ubuntu/Ubuntu-Regular.ttf) format('.ttf');
+  font-family: "Ubuntu";
+  src: url(./assets/Ubuntu/Ubuntu-Regular.ttf) format(".ttf");
 }
-
-:root{
+:root {
   --primary-color: #EFECEC;
   --secondary-color: #62929A;
   --tertiary-color: #5C5757;
   --fourth-color: #363434;
-  --font-family: 'Ubuntu';
+  --font-family: "Ubuntu";
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,4 +19,4 @@ body{
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
-}
+}/*# sourceMappingURL=App.css.map */
