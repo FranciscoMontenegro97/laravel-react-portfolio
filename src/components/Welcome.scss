@@ -1,0 +1,96 @@
+@import '../App.scss';
+
+// Colores
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$fourth-color: var(--fourth-color);
+$fifthy-color: #efecece3;
+
+.hero-body-container{
+  min-height: 80vh;
+  margin-top: 10vh;
+  width: 100%;
+  background: url('../assets/bridge-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content-container{
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.text-hero-container{
+  height: 100%;
+  width: 60%;
+  padding: 5%;
+  border-radius: 100px;
+  background-color: $fifthy-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: $secondary-color;
+  h1{
+    font-size: 2.5rem;
+    line-height: 1.17;
+  }
+  p{
+    font-size: 1rem;
+    line-height: 1.5;
+    
+  }
+}
+
+.hero-image-container{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  background: url('../assets/alone-in-the-sea.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+//Media Queries
+@media (max-width: 450px) {
+
+  .hero-content-container{
+    height: 100%;
+    width: 100%;
+  }
+  .text-hero-container{
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image-container{
+    display: none;
+  }
+}
+
+
+@media (min-width: 451px) and (max-width: 780px) {
+  
+  .text-hero-container{
+    height: 70%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-image-container{
+    display: none;
+  }
+}

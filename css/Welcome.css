@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url(./assets/Ubuntu/Ubuntu-Regular.ttf) format(".ttf");
+}
+:root {
+  --primary-color: #EFECEC;
+  --secondary-color: #62929A;
+  --tertiary-color: #5C5757;
+  --fourth-color: #363434;
+  --font-family: "Ubuntu";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-body-container {
+  min-height: 80vh;
+  margin-top: 10vh;
+  width: 100%;
+  background: url("../assets/bridge-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content-container {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.text-hero-container {
+  height: 100%;
+  width: 60%;
+  padding: 5%;
+  border-radius: 100px;
+  background-color: rgba(239, 236, 236, 0.8901960784);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: var(--secondary-color);
+}
+.text-hero-container h1 {
+  font-size: 2.5rem;
+  line-height: 1.17;
+}
+.text-hero-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hero-image-container {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  background: url("../assets/alone-in-the-sea.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (max-width: 450px) {
+  .hero-content-container {
+    height: 100%;
+    width: 100%;
+  }
+  .text-hero-container {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-image-container {
+    display: none;
+  }
+}
+@media (min-width: 451px) and (max-width: 780px) {
+  .text-hero-container {
+    height: 70%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-image-container {
+    display: none;
+  }
+}/*# sourceMappingURL=Welcome.css.map */
