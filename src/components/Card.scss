@@ -1,0 +1,54 @@
+:root{
+  --card-primary-color: #64CCC5;
+  --card-secondary-color: #0A4D68;
+}
+
+.card-container {
+  position: relative;
+  width: 15vw;
+  height: 45vh;
+  background: #f00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, var(--card-primary-color), var(--card-secondary-color));
+  }
+
+  b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+
+  .card-content {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card-title {
+      z-index: 1;
+      height: 100%;
+      font-weight: 500;
+      line-height: 1em;
+      font-size: 1em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+
+      span {
+        font-weight: 300;
+        font-size: 0.70em;
+      }
+    }
+  }
+}
