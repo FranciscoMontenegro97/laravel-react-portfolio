@@ -68,6 +68,14 @@ body {
   background-size: cover;
   background-position: center center;
 }
+.my-info-container .middle-info-container .my-image-container .description-image-conteiner a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.5s;
+}
+.my-info-container .middle-info-container .my-image-container .description-image-conteiner a:hover {
+  color: var(--secondary-color);
+}
 .my-info-container .middle-info-container .my-resume-container {
   height: 100%;
   width: 50%;
