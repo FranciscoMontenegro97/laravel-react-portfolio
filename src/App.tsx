@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import WelcomeSection from "./components/Welcome";
+import MyInfo from "./components/MyInfo";
 import "./App.scss";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       </div>
       <div className="main-section">
         <WelcomeSection/>
+        <MyInfo />
       </div>
     </>
   )
